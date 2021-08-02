@@ -1,0 +1,45 @@
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+  flex: 1;
+
+  .logo {
+    height: 92px;
+    width: 272px;
+    transform: scale(1.5);
+    margin-top: 200px;
+    margin-bottom: 12px;
+  }
+
+  div {
+    position: relative;
+
+
+    .profile-input {
+      width: 542px;
+      height: 40px;
+      border: 0;
+      outline: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      border-radius: 24px;
+      padding: 24px;
+      background: #e7e7e7;
+    }
+
+    .search-button {
+      position: absolute;
+      background: none;
+      right: 20px;
+      top: 12px;
+      cursor: pointer;
+
+      SVG {
+        color: #8058D7;
+      }
+    }
+  }
+}
