@@ -1,9 +1,19 @@
+.wrapper {
+  // display: flex;
+  // justify-content: center;
+  // flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .user {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex: 1;
-  margin: 100px 600px 0 600px;
+  // margin: 0 auto;
   height: 250px;
   border-radius: 8px;
   font-family: 'Roboto', sans-serif;
@@ -11,16 +21,68 @@
   
   .user-avatar {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-right: 80px;
+    width: 260px;
+    border: solid 2px #8058D7;
+    height: 260px;
+  }
+
+  .user-info {
+    max-width: 400px;
+  
+    .user-follows {
+      display: flex;
+      margin-top: 26px;
+
+      p {
+        & + p{
+          margin-left: 34px;
+        }
+        span {
+          display: block;
+          font-weight: bold;
+          font-size: 26px;
+        }
+      }
+    }
+
+    .user-name {
+      margin-bottom: 10px;
+      h1 {
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 1;
+      }
+
+      h2 {
+        font-weight: 500;
+        font-size: 18px;
+        color: #bfa1ff;
+        padding: 2px 4px;
+        border-radius: 4px;
+        display: inline-block;
+      }
+    }
   }
 }
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background: #313131;
+  padding: 20px 0;
+  margin-bottom: 40px;
+  // background: #313131;
+
+  button {
+    font-size: 0;
+    background: transparent;
+    cursor: pointer;
+    background: #8058D7;
+    padding: 5px;
+    border-radius: 5px;
+
+    SVG {
+      color: #fff;
+    }
+  }
 }
