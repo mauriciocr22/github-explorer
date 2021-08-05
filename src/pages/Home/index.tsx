@@ -22,7 +22,7 @@ export function Home() {
   async function handleSubmit() {
     try{
       const fetchUser = await api.get(`${user}`);
-
+      
       history.push({
         pathname: `user/${user}`,
         state: fetchUser.data,
@@ -32,11 +32,17 @@ export function Home() {
     }
   }
   
+  function handleInputSubmit(event: any) {
+  if(event.keyCode == 13) {
+    handleSubmit()
+  }
+}
+
   return (
     <div className="home-page">
       <SVG src={githubExplorerImg} className="logo" />
       <div>
-        <input type="text" placeholder="Pesquise por um usuário do Github" value={user} onChange={handleChange} className="profile-input"/>
+        <input type="text" placeholder="Pesquise por um usuário do Github" value={user} onChange={handleChange} onKeyDown={handleInputSubmit} className="profile-input"/>
         <button type="submit" className="search-button" onClick={handleSubmit}><SVG src={searchIcon}/></button>
       </div>
     </div>
