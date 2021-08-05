@@ -1,0 +1,26 @@
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 100px 600px 0 600px;
+  height: 250px;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(230, 230, 230);
+  
+  .user-avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-right: 80px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  background: #313131;
+}
