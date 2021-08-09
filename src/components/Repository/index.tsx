@@ -2,6 +2,8 @@ import React from "react";
 import { IUserRepo } from "../../pages/User";
 import { AiOutlineFork, AiOutlineStar, AiOutlineEye } from 'react-icons/ai'
 
+import './styles.scss';
+
 type IRepository = {
   content: IUserRepo;
 }
@@ -16,7 +18,7 @@ export function Repository({content: {
 }}: IRepository) {
 
   return (
-    <a href={html_url}>
+    <a href={html_url} title="Visitar Repositório">
       <h1>{name}</h1>
       <p>{description}</p>
       <ul>

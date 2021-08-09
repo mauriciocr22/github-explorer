@@ -1,0 +1,48 @@
+a {
+  display: block;
+  color: rgb(209, 209, 209);
+  background: #333333;
+  border-radius: 6px;
+  padding: 16px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  transition: transform .2s ease;
+  
+  &:hover, &:focus {
+    transform: scale(1.02);
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  & + a {
+    margin-top: 12px;
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin-left: auto;
+    width: 200px;
+    justify-content: flex-end;
+    padding: 8px 2px;
+
+
+    li {
+      display: flex;
+      align-items: center;
+
+      & + li {
+        margin-left: 4px;
+      }
+
+      svg {
+        font-size: 22px;
+        margin-left: 2px;
+        
+      }
+    }
+  }
+}
