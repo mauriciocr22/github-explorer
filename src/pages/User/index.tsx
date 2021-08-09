@@ -8,14 +8,14 @@ import githubExplorerImg from '../../assets/github-explorer.svg';
 import backIcon from '../../assets/back.svg';
 
 import './styles.scss'
+import { Repository } from '../../components/Repository';
 
-type IUserRepo = {
+export type IUserRepo = {
   id: number;
   forks: number;
   name: string;
-  languager_url: string;
   watchers: number;
-  url: string;
+  html_url: string;
   stargazers_count: number;
   description: string;
 }
@@ -27,7 +27,6 @@ export function User(props: any) {
     bio, 
     followers, 
     following, 
-    id, 
     name 
   } = props.location.state;
   const history = useHistory()
@@ -42,8 +41,8 @@ export function User(props: any) {
 
   async function fetchUserRepos() {
     try{
-      const fetchUserRepos = await api.get(`${login}/repos`);
-      setUserRepos(fetchUserRepos.data);
+      const {data} = await api.get(`${login}/repos`);
+      setUserRepos(data);
     } catch {
       console.log('Usuário sem repositórios');
     }
@@ -76,6 +75,11 @@ export function User(props: any) {
           </div>
         </div>
       </div>
+      {userRepos.map(repo => {
+        return (
+          <Repository content={repo} key={repo.id}/>
+        )
+      })}
     </div>
   )
 }

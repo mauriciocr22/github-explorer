@@ -33,7 +33,7 @@ export function Home() {
   }
   
   function handleInputSubmit(event: any) {
-  if(event.keyCode == 13) {
+  if(event.keyCode === 13) {
     handleSubmit()
   }
 }
