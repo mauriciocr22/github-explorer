@@ -42,7 +42,7 @@ export function Home() {
     <div className="home-page">
       <SVG src={githubExplorerImg} className="logo" />
       <div>
-        <input type="text" placeholder="Pesquise por um usuário do Github" value={user} onChange={handleChange} onKeyDown={handleInputSubmit} className="profile-input"/>
+        <input type="text" placeholder="Pesquise por um usuário" value={user} onChange={handleChange} onKeyDown={handleInputSubmit} className="profile-input"/>
         <button type="submit" className="search-button" onClick={handleSubmit}><SVG src={searchIcon}/></button>
       </div>
     </div>
