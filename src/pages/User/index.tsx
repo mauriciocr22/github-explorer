@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
@@ -39,14 +39,14 @@ export function User(props: any) {
     history.push('/')
   }
 
-  async function fetchUserRepos() {
+  const fetchUserRepos = useCallback(async () => {
     try{
       const {data} = await api.get(`${login}/repos`);
       setUserRepos(data);
     } catch {
       console.log('Usuário sem repositórios');
     }
-  }
+  }, [login]);
 
   useEffect(() => {
     fetchUserRepos();
