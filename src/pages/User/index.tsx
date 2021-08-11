@@ -50,7 +50,7 @@ export function User(props: any) {
 
   useEffect(() => {
     fetchUserRepos();
-  }, [])
+  }, [fetchUserRepos])
 
   console.log(userRepos);
 
