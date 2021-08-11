@@ -7,6 +7,7 @@ a {
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   transition: transform .2s ease;
+  word-wrap: break-word;
   
   &:hover, &:focus {
     transform: scale(1.02);
