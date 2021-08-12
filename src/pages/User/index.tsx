@@ -31,8 +31,6 @@ export function User(props: any) {
   } = props.location.state;
   const history = useHistory()
 
-  console.log(props.location.state)
-
   const [ userRepos, setUserRepos ] = useState<IUserRepo[]>([]);
 
   function handleGoBack() {
@@ -44,15 +42,13 @@ export function User(props: any) {
       const {data} = await api.get(`${login}/repos`);
       setUserRepos(data);
     } catch {
-      console.log('Usuário sem repositórios');
+      window.alert('Usuário sem repositórios');
     }
   }, [login]);
 
   useEffect(() => {
     fetchUserRepos();
   }, [fetchUserRepos])
-
-  console.log(userRepos);
 
   return(
     <div className="wrapper">
